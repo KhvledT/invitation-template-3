@@ -3,9 +3,10 @@ import scratchOverlay from "@/assets/scratch-overlay.jpg";
 
 interface ScratchCardProps {
   onReveal: () => void;
+  onReady?: () => void;
 }
 
-const ScratchCard = ({ onReveal }: ScratchCardProps) => {
+const ScratchCard = ({ onReveal, onReady }: ScratchCardProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isScratching, setIsScratching] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -75,6 +76,7 @@ const ScratchCard = ({ onReveal }: ScratchCardProps) => {
       ctx.font = "bold 20px Montserrat, sans-serif";
       ctx.textAlign = "center";
       ctx.fillText("✨ Scratch Here ✨", canvas.width / 2, canvas.height / 2);
+      if (onReady) onReady();
     };
     img.src = scratchOverlay;
   }, []);

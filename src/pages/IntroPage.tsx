@@ -14,6 +14,7 @@ const IntroPage = () => {
   const [phase, setPhase] = useState<"images" | "scratch" | "transition">(
     "images",
   );
+  const [isScratchReady, setIsScratchReady] = useState(false);
   const groomRef = useRef<HTMLDivElement>(null);
   const brideRef = useRef<HTMLDivElement>(null);
   const ampersandRef = useRef<HTMLDivElement>(null);
@@ -130,7 +131,7 @@ const IntroPage = () => {
   }, []);
 
   useEffect(() => {
-    if (phase === "scratch" && scratchRef.current) {
+    if (phase === "scratch" && scratchRef.current && isScratchReady) {
       const tl = gsap.timeline();
       tl.fromTo(
         scratchRef.current,
@@ -155,7 +156,7 @@ const IntroPage = () => {
         });
       });
     }
-  }, [phase]);
+  }, [phase, isScratchReady]);
 
   const handleReveal = () => {
     setPhase("transition");
@@ -300,7 +301,7 @@ const IntroPage = () => {
               Scratch to Reveal
             </p>
           </div>
-          <ScratchCard onReveal={handleReveal} />
+          <ScratchCard onReveal={handleReveal} onReady={() => setIsScratchReady(true)} />
           <p className="font-body text-[10px] tracking-[0.3em] text-foreground/30 uppercase">
             Use your finger or mouse to scratch
           </p>
