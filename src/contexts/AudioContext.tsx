@@ -9,6 +9,7 @@ import React, {
 interface AudioContextType {
   isPlaying: boolean;
   isMuted: boolean;
+  initAudio: () => void;
   startMusic: () => void;
   toggleMute: () => void;
 }
@@ -16,6 +17,7 @@ interface AudioContextType {
 const AudioCtx = createContext<AudioContextType>({
   isPlaying: false,
   isMuted: false,
+  initAudio: () => {},
   startMusic: () => {},
   toggleMute: () => {},
 });
@@ -28,6 +30,16 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+
+  const initAudio = useCallback(() => {
+    if (!audioRef.current) {
+      const audio = new Audio("/Audio.mp3");
+      audio.loop = true;
+      audio.volume = 0;
+      audioRef.current = audio;
+      audio.play().catch(() => {});
+    }
+  }, []);
 
   const startMusic = useCallback(() => {
     if (!audioRef.current) {
@@ -60,7 +72,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   return (
-    <AudioCtx.Provider value={{ isPlaying, isMuted, startMusic, toggleMute }}>
+    <AudioCtx.Provider value={{ isPlaying, isMuted, initAudio, startMusic, toggleMute }}>
       {children}
     </AudioCtx.Provider>
   );

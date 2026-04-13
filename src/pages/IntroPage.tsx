@@ -9,7 +9,7 @@ import floralCorner from "@/assets/floral-corner.png";
 
 const IntroPage = () => {
   const navigate = useNavigate();
-  const { startMusic } = useAudio();
+  const { startMusic, initAudio } = useAudio();
   const containerRef = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState<"images" | "scratch" | "transition">(
     "images",
@@ -301,7 +301,7 @@ const IntroPage = () => {
               Scratch to Reveal
             </p>
           </div>
-          <ScratchCard onReveal={handleReveal} onReady={() => setIsScratchReady(true)} />
+          <ScratchCard onReveal={handleReveal} onReady={() => setIsScratchReady(true)} onInteract={initAudio} />
           <p className="font-body text-[10px] tracking-[0.3em] text-foreground/30 uppercase">
             Use your finger or mouse to scratch
           </p>

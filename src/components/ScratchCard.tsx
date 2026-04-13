@@ -4,9 +4,10 @@ import scratchOverlay from "@/assets/scratch-overlay.jpg";
 interface ScratchCardProps {
   onReveal: () => void;
   onReady?: () => void;
+  onInteract?: () => void;
 }
 
-const ScratchCard = ({ onReveal, onReady }: ScratchCardProps) => {
+const ScratchCard = ({ onReveal, onReady, onInteract }: ScratchCardProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isScratching, setIsScratching] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -89,6 +90,7 @@ const ScratchCard = ({ onReveal, onReady }: ScratchCardProps) => {
       e.preventDefault();
       setIsScratching(true);
       scratch(e);
+      if (onInteract) onInteract();
     };
     const doScratch = (e: MouseEvent | TouchEvent) => {
       e.preventDefault();
@@ -111,7 +113,7 @@ const ScratchCard = ({ onReveal, onReady }: ScratchCardProps) => {
       canvas.removeEventListener("touchmove", doScratch);
       canvas.removeEventListener("touchend", endScratch);
     };
-  }, [scratch]);
+  }, [scratch, onInteract]);
 
   return (
     <div className="relative w-72 h-48 md:w-96 md:h-60 rounded-lg overflow-hidden shadow-2xl">
