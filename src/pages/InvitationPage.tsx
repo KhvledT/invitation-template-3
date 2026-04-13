@@ -273,7 +273,7 @@ const InvitationPage = () => {
           <h1 className="hero-line font-serif text-5xl md:text-8xl font-bold mb-3 text-foreground tracking-wide text-shadow-soft">
             Murad
           </h1>
-          <p className="hero-line font-accent text-4xl md:text-5xl text-wedding-gold italic text-shadow-glow">
+          <p className="hero-line font-accent text-4xl md:text-5xl text-wedding-gold-dark italic text-shadow-glow">
             &
           </p>
           <h1 className="hero-line font-serif text-5xl md:text-8xl font-bold mt-3 text-foreground tracking-wide text-shadow-soft">
@@ -310,7 +310,7 @@ const InvitationPage = () => {
 
       {/* ===== LOCATION MAP ===== */}
       <section className="anim-section py-28 px-8 flex flex-col items-center section-bg-gradient">
-        <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold mb-3">
+        <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold-dark mb-3">
           Where We Celebrate
         </p>
         <h2 className="anim-child font-serif text-3xl md:text-5xl text-foreground mb-6">
@@ -345,7 +345,7 @@ const InvitationPage = () => {
           alt=""
           className="anim-child w-20 h-20 opacity-30 float-element mb-8 animate-rotate-slow"
         />
-        <p className="anim-child font-accent text-base tracking-[0.4em] uppercase text-wedding-gold/70 mb-4">
+        <p className="anim-child font-accent text-base tracking-[0.4em] uppercase text-wedding-gold-dark/70 mb-4">
           With Love & Joy
         </p>
         <h2 className="anim-child font-serif text-4xl md:text-7xl text-foreground text-center leading-tight text-shadow-soft">
@@ -377,7 +377,7 @@ const InvitationPage = () => {
         />
         
         <div className="anim-child text-center relative z-10">
-          <p className="font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold mb-4">
+          <p className="font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold-dark mb-4">
             Continue The Journey
           </p>
           <h2 className="font-serif text-4xl md:text-6xl text-foreground mb-8 text-shadow-glow">
@@ -389,7 +389,7 @@ const InvitationPage = () => {
         </div>
 
         <div className="anim-child flex items-center justify-center gap-4 md:gap-8 relative z-20 w-full max-w-3xl">
-          <div className="flex animate-pulse text-wedding-gold">
+          <div className="flex animate-pulse text-wedding-gold-dark">
             <ChevronsRight className="w-8 h-8 md:w-12 md:h-12" strokeWidth={1} />
             <ChevronsRight className="w-8 h-8 md:w-12 md:h-12 -ml-4 md:-ml-6 opacity-70" strokeWidth={1} />
           </div>
@@ -407,7 +407,7 @@ const InvitationPage = () => {
             <span className="relative z-10 text-lg tracking-[0.1em] font-medium text-shadow-soft">Explore Our Memories</span>
           </button>
 
-          <div className="flex animate-pulse text-wedding-gold">
+          <div className="flex animate-pulse text-wedding-gold-dark">
             <ChevronsLeft className="w-8 h-8 md:w-12 md:h-12 opacity-70" strokeWidth={1} />
             <ChevronsLeft className="w-8 h-8 md:w-12 md:h-12 -ml-4 md:-ml-6" strokeWidth={1} />
           </div>
@@ -416,7 +416,7 @@ const InvitationPage = () => {
 
       {/* ===== COUNTDOWN ===== */}
       <section className="anim-section py-28 px-8 flex flex-col items-center">
-        <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold/70 mb-8">
+        <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold-dark/70 mb-8">
           Counting Down
         </p>
         <div className="flex gap-2 md:gap-12">
@@ -431,7 +431,7 @@ const InvitationPage = () => {
               className="anim-child flex flex-col items-center"
             >
               <div className="wedding-card px-5 py-4 md:px-8 md:py-6 mb-3">
-                <span className="font-serif text-3xl md:text-5xl text-wedding-gold tabular-nums">
+                <span className="font-serif text-3xl md:text-5xl text-wedding-gold-dark tabular-nums">
                   {String(item.value).padStart(2, "0")}
                 </span>
               </div>

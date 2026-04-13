@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -53,14 +58,15 @@ export default {
           "blue-dark": "hsl(var(--wedding-blue-dark))",
           cream: "hsl(var(--wedding-cream))",
           gold: "hsl(var(--wedding-gold))",
+          "gold-dark": "hsl(var(--wedding-gold-dark))",
           "gold-light": "hsl(var(--wedding-gold-light))",
           dark: "hsl(var(--wedding-dark))",
         },
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        accent: ['Cormorant Garamond', 'serif'],
-        body: ['Montserrat', 'sans-serif'],
+        serif: ["Playfair Display", "serif"],
+        accent: ["Cormorant Garamond", "serif"],
+        body: ["Montserrat", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

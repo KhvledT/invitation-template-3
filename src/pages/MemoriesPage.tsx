@@ -264,7 +264,7 @@ const MemoriesPage = () => {
 
       {/* ===== HEADER ===== */}
       <section className="pt-28 pb-20 px-8 text-center relative">
-        <p className="header-anim font-accent text-sm tracking-[0.5em] uppercase text-wedding-gold/60 mb-6">
+        <p className="header-anim font-accent text-sm tracking-[0.5em] uppercase text-wedding-gold-dark/60 mb-6">
           Murad & Juliana
         </p>
         <h1 className="header-anim font-serif text-5xl md:text-7xl text-foreground mb-6 text-shadow-soft">
@@ -304,7 +304,7 @@ const MemoriesPage = () => {
 
       {/* ===== VENUE SHOWCASE ===== */}
       <section className="anim-section py-28 px-8 text-center section-bg-gradient">
-        <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold/70 mb-3">
+        <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold-dark/70 mb-3">
           Where Dreams Come True
         </p>
         <h2 className="anim-child font-serif text-3xl md:text-5xl text-foreground mb-6 text-shadow-soft">
@@ -347,7 +347,7 @@ const MemoriesPage = () => {
             alt=""
             className="w-16 h-16 opacity-25 mx-auto mb-6 float-element"
           />
-          <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold/70 mb-3">
+          <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold-dark/70 mb-3">
             Words From The Heart
           </p>
           <h2 className="anim-child font-serif text-3xl md:text-5xl text-foreground mb-6 text-shadow-soft">
@@ -363,7 +363,7 @@ const MemoriesPage = () => {
                 {msg.text}
               </p>
               <div className="gold-divider-wide mb-4" />
-              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-wedding-gold/80">
+              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-wedding-gold-dark/80">
                 {msg.from}
               </p>
             </div>
@@ -381,7 +381,7 @@ const MemoriesPage = () => {
           alt=""
           className="anim-child w-24 h-24 opacity-20 mb-8 animate-rotate-slow"
         />
-        <p className="anim-child font-accent text-base tracking-[0.4em] uppercase text-wedding-gold/50 mb-4">
+        <p className="anim-child font-accent text-base tracking-[0.4em] uppercase text-wedding-gold-dark/50 mb-4">
           With Gratitude
         </p>
         <h2 className="anim-child font-serif text-4xl md:text-6xl text-foreground text-shadow-soft">
@@ -398,7 +398,7 @@ const MemoriesPage = () => {
           {["✦", "❤", "✦"].map((s, i) => (
             <span
               key={i}
-              className="text-wedding-gold/40 text-sm animate-float"
+              className="text-wedding-gold-dark/40 text-sm animate-float"
               style={{ animationDelay: `${i * 0.5}s` }}
             >
               {s}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -32,16 +32,27 @@
     --wedding-blue-dark: 212 25% 38%;
     --wedding-cream: 40 30% 96%;
     --wedding-gold: 45 70% 64%;
+    --wedding-gold-dark: 50 100% 60%;
     --wedding-gold-light: 45 60% 78%;
     --wedding-dark: 0 0% 17%;
 
-    --font-serif: 'Playfair Display', serif;
-    --font-body: 'Montserrat', sans-serif;
-    --font-accent: 'Cormorant Garamond', serif;
+    --font-serif: "Playfair Display", serif;
+    --font-body: "Montserrat", sans-serif;
+    --font-accent: "Cormorant Garamond", serif;
 
-    --gradient-romantic: linear-gradient(180deg, hsl(212 20% 52%), hsl(212 22% 58%), hsl(210 25% 62%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 70% 64%), hsl(40 80% 72%), hsl(45 70% 64%));
-    --shadow-romantic: 0 20px 60px -15px rgba(0,0,0,0.25);
+    --gradient-romantic: linear-gradient(
+      180deg,
+      hsl(212 20% 52%),
+      hsl(212 22% 58%),
+      hsl(210 25% 62%)
+    );
+    --gradient-gold: linear-gradient(
+      135deg,
+      hsl(45 70% 64%),
+      hsl(40 80% 72%),
+      hsl(45 70% 64%)
+    );
+    --shadow-romantic: 0 20px 60px -15px rgba(0, 0, 0, 0.25);
     --shadow-gold: 0 0 40px hsl(45 70% 64% / 0.15);
   }
 }
@@ -55,7 +66,12 @@
     font-family: var(--font-body);
     overflow-x: hidden;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
   }
   ::selection {
@@ -65,13 +81,29 @@
 }
 
 @layer utilities {
-  .font-serif { font-family: var(--font-serif); }
-  .font-accent { font-family: var(--font-accent); }
-  .font-body { font-family: var(--font-body); }
-  .text-shadow-soft { text-shadow: 0 2px 20px rgba(0,0,0,0.25); }
-  .text-shadow-glow { text-shadow: 0 0 30px hsl(var(--wedding-gold) / 0.3), 0 2px 10px rgba(0,0,0,0.15); }
-  .bg-gradient-romantic { background: var(--gradient-romantic); }
-  .bg-gradient-gold { background: var(--gradient-gold); }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-shadow-soft {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+  }
+  .text-shadow-glow {
+    text-shadow:
+      0 0 30px hsl(var(--wedding-gold) / 0.3),
+      0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+  .bg-gradient-romantic {
+    background: var(--gradient-romantic);
+  }
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
 }
 
 @layer components {
@@ -83,14 +115,14 @@
     @apply fixed left-0 top-0 h-full w-20 md:w-36 lg:w-48 z-10 pointer-events-none;
     object-fit: cover;
     object-position: center;
-    filter: drop-shadow(4px 0 15px rgba(0,0,0,0.15));
+    filter: drop-shadow(4px 0 15px rgba(0, 0, 0, 0.15));
   }
 
   .floral-right {
     @apply fixed right-0 top-0 h-full w-20 md:w-36 lg:w-48 z-10 pointer-events-none;
     object-fit: cover;
     object-position: center;
-    filter: drop-shadow(-4px 0 15px rgba(0,0,0,0.15));
+    filter: drop-shadow(-4px 0 15px rgba(0, 0, 0, 0.15));
   }
 
   .gold-divider {
@@ -100,7 +132,7 @@
   }
   .gold-divider::before,
   .gold-divider::after {
-    content: '✦';
+    content: "✦";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -108,49 +140,81 @@
     font-size: 8px;
     opacity: 0.8;
   }
-  .gold-divider::before { left: -12px; }
-  .gold-divider::after { right: -12px; }
+  .gold-divider::before {
+    left: -12px;
+  }
+  .gold-divider::after {
+    right: -12px;
+  }
 
   .gold-divider-wide {
     @apply w-48 h-[1px] mx-auto;
-    background: linear-gradient(90deg, transparent, hsl(var(--wedding-gold) / 0.6), hsl(var(--wedding-gold)), hsl(var(--wedding-gold) / 0.6), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--wedding-gold) / 0.6),
+      hsl(var(--wedding-gold)),
+      hsl(var(--wedding-gold) / 0.6),
+      transparent
+    );
   }
 
   .wedding-btn {
     @apply relative inline-flex items-center justify-center px-12 py-5 font-accent text-xl tracking-[0.25em] uppercase border-2 border-foreground/20 transition-all duration-700;
-    background: linear-gradient(135deg, hsl(var(--wedding-blue-dark) / 0.5), transparent);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--wedding-blue-dark) / 0.5),
+      transparent
+    );
     backdrop-filter: blur(10px);
     overflow: hidden;
   }
   .wedding-btn::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, hsl(var(--wedding-gold) / 0), hsl(var(--wedding-gold) / 0.15));
+    background: linear-gradient(
+      135deg,
+      hsl(var(--wedding-gold) / 0),
+      hsl(var(--wedding-gold) / 0.15)
+    );
     opacity: 0;
     transition: opacity 0.7s ease;
   }
-  .wedding-btn:hover::before { opacity: 1; }
+  .wedding-btn:hover::before {
+    opacity: 1;
+  }
   .wedding-btn:hover {
     border-color: hsl(var(--wedding-gold) / 0.6);
-    box-shadow: 0 0 50px hsl(var(--wedding-gold) / 0.2), inset 0 0 30px hsl(var(--wedding-gold) / 0.05);
+    box-shadow:
+      0 0 50px hsl(var(--wedding-gold) / 0.2),
+      inset 0 0 30px hsl(var(--wedding-gold) / 0.05);
     transform: translateY(-2px);
     letter-spacing: 0.35em;
   }
   .wedding-btn::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, hsl(var(--wedding-gold) / 0.1), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--wedding-gold) / 0.1),
+      transparent
+    );
     animation: btn-shimmer 4s ease-in-out infinite;
   }
 
   .wedding-card {
     @apply relative p-8 md:p-10 rounded-2xl border border-foreground/10 backdrop-blur-md;
-    background: linear-gradient(145deg, hsl(var(--wedding-blue-dark) / 0.3), hsl(var(--primary) / 0.5));
+    background: linear-gradient(
+      145deg,
+      hsl(var(--wedding-blue-dark) / 0.3),
+      hsl(var(--primary) / 0.5)
+    );
     box-shadow: var(--shadow-romantic);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -166,7 +230,12 @@
   }
 
   .section-bg-gradient {
-    background: linear-gradient(180deg, transparent 0%, hsl(var(--wedding-blue-dark) / 0.15) 50%, transparent 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(var(--wedding-blue-dark) / 0.15) 50%,
+      transparent 100%
+    );
   }
 
   .page-transition-overlay {
@@ -181,78 +250,170 @@
 
 /* === Keyframes === */
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-10px) rotate(1deg); }
-  50% { transform: translateY(-18px) rotate(0deg); }
-  75% { transform: translateY(-8px) rotate(-1deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-25px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 25px hsl(var(--wedding-gold) / 0.15), 0 0 60px hsl(var(--wedding-gold) / 0.05); }
-  50% { box-shadow: 0 0 45px hsl(var(--wedding-gold) / 0.35), 0 0 80px hsl(var(--wedding-gold) / 0.1); }
+  0%,
+  100% {
+    box-shadow:
+      0 0 25px hsl(var(--wedding-gold) / 0.15),
+      0 0 60px hsl(var(--wedding-gold) / 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 45px hsl(var(--wedding-gold) / 0.35),
+      0 0 80px hsl(var(--wedding-gold) / 0.1);
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 @keyframes btn-shimmer {
-  0%, 100% { left: -100%; }
-  50% { left: 100%; }
+  0%,
+  100% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
 }
 
 @keyframes sparkle {
-  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
 }
 
 @keyframes drift {
-  0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.6; }
-  90% { opacity: 0.3; }
-  100% { transform: translateY(-10vh) translateX(50px) rotate(360deg); opacity: 0; }
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 @keyframes breath {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.08); opacity: 0.7; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
 }
 
 @keyframes horizontal-drift {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(15px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
 }
 
 @keyframes text-reveal {
-  0% { clip-path: inset(0 100% 0 0); }
-  100% { clip-path: inset(0 0 0 0); }
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 @keyframes line-grow {
-  0% { transform: scaleX(0); }
-  100% { transform: scaleX(1); }
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes rotate-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.animate-float { animation: float 5s ease-in-out infinite; }
-.animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
-.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-.animate-shimmer { background-size: 200% auto; animation: shimmer 3s linear infinite; }
-.animate-sparkle { animation: sparkle 2s ease-in-out infinite; }
-.animate-drift { animation: drift 15s linear infinite; }
-.animate-breath { animation: breath 4s ease-in-out infinite; }
-.animate-h-drift { animation: horizontal-drift 6s ease-in-out infinite; }
-.animate-rotate-slow { animation: rotate-slow 30s linear infinite; }
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+.animate-drift {
+  animation: drift 15s linear infinite;
+}
+.animate-breath {
+  animation: breath 4s ease-in-out infinite;
+}
+.animate-h-drift {
+  animation: horizontal-drift 6s ease-in-out infinite;
+}
+.animate-rotate-slow {
+  animation: rotate-slow 30s linear infinite;
+}
 
 /* Particle dot styles */
 .particle {
@@ -262,7 +423,11 @@
 }
 .particle-light {
   @apply absolute rounded-full pointer-events-none;
-  background: radial-gradient(circle, hsl(var(--foreground) / 0.15), transparent);
+  background: radial-gradient(
+    circle,
+    hsl(var(--foreground) / 0.15),
+    transparent
+  );
 }
 
 /* Enhanced scrollbar */

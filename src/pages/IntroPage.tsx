@@ -254,7 +254,7 @@ const IntroPage = () => {
           </div>
           <div
             ref={ampersandRef}
-            className="font-accent text-5xl md:text-6xl text-wedding-gold opacity-0 text-shadow-glow"
+            className="font-accent text-5xl md:text-6xl text-wedding-gold-dark opacity-0 text-shadow-glow"
           >
             &
           </div>
@@ -288,7 +288,7 @@ const IntroPage = () => {
           ].map((pos, i) => (
             <span
               key={i}
-              className={`sparkle absolute ${pos} text-wedding-gold text-xl opacity-0 scale-0`}
+              className={`sparkle absolute ${pos} text-wedding-gold-dark text-xl opacity-0 scale-0`}
             >
               ✦
             </span>
