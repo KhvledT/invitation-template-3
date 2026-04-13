@@ -7,6 +7,7 @@ import Particles from "@/components/Particles";
 import { usePageTransition } from "@/components/PageTransition";
 import heroCouple from "@/assets/hero-couple.jpg";
 import floralCorner from "@/assets/floral-corner.png";
+import { ChevronsLeft, ChevronsRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -363,27 +364,54 @@ const InvitationPage = () => {
       </section>
 
       {/* ===== EXPLORE MEMORIES ===== */}
-      <section className="anim-section py-28 px-8 flex flex-col items-center section-bg-gradient">
+      <section className="anim-section py-32 px-8 flex flex-col items-center section-bg-gradient relative overflow-hidden">
+        {/* Decorative background blur */}
+        <div className="absolute inset-0 pointer-events-none flex justify-center items-center">
+          <div className="w-[500px] h-[500px] bg-wedding-gold/5 rounded-full blur-[100px]" />
+        </div>
+
         <img
           src={floralCorner}
           alt=""
-          className="anim-child w-16 h-16 opacity-30 float-element mb-8"
+          className="anim-child w-20 h-20 opacity-40 float-element mb-8"
         />
-        <p className="anim-child font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold/70 mb-3">
-          Continue The Journey
-        </p>
-        <h2 className="anim-child font-serif text-3xl md:text-5xl text-foreground mb-6 text-shadow-soft">
-          Our Story Continues
-        </h2>
-        <p className="anim-child font-accent text-base tracking-[0.2em] text-foreground/50 uppercase mb-12 text-center">
-          Explore the moments that led us here
-        </p>
-        <button
-          onClick={goToMemories}
-          className="anim-child wedding-btn animate-pulse-glow text-foreground"
-        >
-          <span className="relative z-10">Explore Our Memories</span>
-        </button>
+        
+        <div className="anim-child text-center relative z-10">
+          <p className="font-accent text-sm tracking-[0.4em] uppercase text-wedding-gold mb-4">
+            Continue The Journey
+          </p>
+          <h2 className="font-serif text-4xl md:text-6xl text-foreground mb-8 text-shadow-glow">
+            Our Story Continues
+          </h2>
+          <p className="font-accent text-base md:text-lg tracking-[0.15em] text-foreground/60 uppercase mb-14 max-w-xl mx-auto px-4">
+            Explore the beautiful moments that led us to this day
+          </p>
+        </div>
+
+        <div className="anim-child flex items-center justify-center gap-4 md:gap-8 relative z-20 w-full max-w-3xl">
+          <div className="flex animate-pulse text-wedding-gold">
+            <ChevronsRight className="w-8 h-8 md:w-12 md:h-12" strokeWidth={1} />
+            <ChevronsRight className="w-8 h-8 md:w-12 md:h-12 -ml-4 md:-ml-6 opacity-70" strokeWidth={1} />
+          </div>
+          
+          <button
+            onClick={goToMemories}
+            className="wedding-btn animate-pulse-glow text-foreground shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transform hover:scale-105 transition-all duration-300 relative group overflow-hidden"
+            style={{ padding: "18px 48px" }}
+          >
+            {/* Darker background overlay */}
+            <div className="absolute inset-0 bg-black/40 z-0" />
+            
+            {/* Button shiny sweep effect */}
+            <div className="absolute inset-0 z-0 w-full h-full -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+            <span className="relative z-10 text-lg tracking-[0.1em] font-medium text-shadow-soft">Explore Our Memories</span>
+          </button>
+
+          <div className="flex animate-pulse text-wedding-gold">
+            <ChevronsLeft className="w-8 h-8 md:w-12 md:h-12 opacity-70" strokeWidth={1} />
+            <ChevronsLeft className="w-8 h-8 md:w-12 md:h-12 -ml-4 md:-ml-6" strokeWidth={1} />
+          </div>
+        </div>
       </section>
 
       {/* ===== COUNTDOWN ===== */}
